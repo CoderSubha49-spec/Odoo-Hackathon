@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HRMS - Login & Registration</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background: #f3f4f6; display: flex; justify-content: center; align-items: center; height: 100vh; }
+        .card { background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); width: 100%; max-width: 400px; }
+        h2 { text-align: center; margin-bottom: 24px; color: #714B67; } /* Odoo color theme */
+        .input-group { margin-bottom: 16px; }
+        .input-group label { display: block; margin-bottom: 6px; font-weight: 600; color: #4b5563; }
+        .input-group input, .input-group select { width: 100%; padding: 10px; border: 1px solid #d1d5db; border-radius: 6px; font-size: 14px; }
+        button { width: 100%; padding: 12px; background: #714B67; color: white; border: none; border-radius: 6px; font-size: 16px; font-weight: bold; cursor: pointer; margin-top: 10px; }
+        button:hover { background: #5a3c52; }
+        .toggle-text { text-align: center; margin-top: 20px; font-size: 14px; color: #6b7280; cursor: pointer; }
+        .toggle-text span { color: #714B67; font-weight: bold; }
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <!-- SIGN IN FORM -->
+        <div id="login-form">
+            <h2>HRMS Sign In</h2>
+            <div class="input-group">
+                <label>Email</label>
+                <input type="email" placeholder="enter your email">
+            </div>
+            <div class="input-group">
+                <label>Password</label>
+                <input type="password" placeholder="••••••••">
+            </div>
+            <button onclick="window.location.href='dashboard.html'">Sign In</button>
+            <p class="toggle-text" onclick="toggleForms()">Don't have an account? <span id="toggle-link">Sign Up</span></p>
+        </div>
+
+        <!-- SIGN UP FORM (Hidden by default) -->
+        <div id="register-form" class="hidden">
+            <h2>HRMS Sign Up</h2>
+            <div class="input-group">
+                <label>Employee ID</label>
+                <input type="text" placeholder="e.g., EMP123">
+            </div>
+            <div class="input-group">
+                <label>Email Address</label>
+                <input type="email" placeholder="name@company.com">
+            </div>
+            <div class="input-group">
+                <label>Password</label>
+                <input type="password" placeholder="Create safe password">
+            </div>
+            <div class="input-group">
+                <label>Role</label>
+                <select>
+                    <option value="employee">Employee</option>
+                    <option value="admin">Admin / HR Officer</option>
+                </select>
+            </div>
+            <button onclick="alert('Registering account...')">Register</button>
+            <p class="toggle-text" onclick="toggleForms()">Already have an account? <span>Sign In</span></p>
+        </div>
+    </div>
+
+    <script>
+        function toggleForms() {
+            document.getElementById('login-form').classList.toggle('hidden');
+            document.getElementById('register-form').classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>
