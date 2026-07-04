@@ -5,12 +5,16 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "seed": "node seedSampleData.js"
+    "seed": "node seedSampleData.js",
+    "test": "jest --runInBand --detectOpenHandles"
   },
   "dependencies": {
     "cors": "^2.8.0",
     "express": "^4.19.0",
     "firebase-admin": "^11.10.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^6.3.4"
   }
 }
-

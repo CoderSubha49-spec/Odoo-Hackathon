@@ -285,8 +285,12 @@ app.put('/api/payroll/:employeeId', async (req, res) => {
   }
 });
 
-app.listen(PORT, () => {
-  console.log(`HRMS backend running on http://localhost:${PORT}`);
-  console.log('Firebase configuration status: check /api/health');
-  console.log('Add your Firebase credentials to firebaseConfig.js to start');
-});
+if (require.main === module) {
+  app.listen(PORT, () => {
+    console.log(`HRMS backend running on http://localhost:${PORT}`);
+    console.log('Firebase configuration status: check /api/health');
+    console.log('Add your Firebase credentials to firebaseConfig.js to start');
+  });
+}
+
+module.exports = app;
